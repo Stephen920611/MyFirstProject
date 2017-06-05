@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>列表页</title>
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/header-footer.css">
+	<link rel="stylesheet" type="text/css" href="css/goods-list.css">
+</head>
+<body>
+	<div id="all">
+		<!-- 头部 -->
+		<div class="allheader">
+		</div>
+		
+
+		<!-- 最右边的提示 -->
+		<div class="righthint">
+			
+		</div>
+
+		<!-- logo -->
+		<div class="alllogo">
+			
+		</div>
+		<!-- selection -->
+		<div class="allselection">
+			<div class="selection">
+				<div class="selection-con selection-con1">
+					<span>狗狗&nbsp;20753</span>
+					<b></b>
+				</div>
+				<i></i>
+				<div class="selection-con">
+					<span>狗狗零食&nbsp;2792</span>
+					<b></b>
+				</div>
+			</div>
+		</div>
+		<!-- list -->
+		<div class="alllist">
+			<div class="list">
+				<div class="list-top">
+					<div class="list-top-selection">
+						<div class="list-top-selection-left ">
+							<a href="javascript:;" >
+								<span class="list-top-selection-active">默认</span>
+							</a>
+							<a href="javascript:;">
+								<span>销量</span>
+							</a>
+							<a href="javascript:;">
+								<span>人气</span>
+							</a>
+							<a href="javascript:;">
+								<span>新品</span>
+							</a>
+							<a href="javascript:;">
+								<span>评论</span>
+							</a>
+							<a href="javascript:;">
+								<span>价格</span>
+							</a>
+						</div>	
+					</div>
+					<div class="list-top-address">
+						<div class="list-top-address-left">
+							<span>送货至：</span>
+							<div>北京</div>
+						</div>
+						<div class="list-top-right">
+							
+						</div>
+					</div>
+				</div>
+				<div class="list-bottom">
+					<div class="list-bottom-con">
+						<div class="list-bottom-content">
+							<div class="list-bottom-content-img">
+								<a href="javascript:;"><img src="https://img2.epetbar.com/2014-01/03/b673901a11db19aafdc0e0ae175544ce.jpg@!200w-c"></a>
+							</div>
+							<div class="list-bottom-content-text">
+								<a href="javascript:;">
+									<span>伯纳天纯 天然低敏 中大型犬 成犬粮 15kg</span>
+								</a>
+							</div>
+							<div class="list-bottom-content-price">
+								<span>￥585.60</span>
+								<span>￥488.00</span>
+								<span>16.26元/斤</span>
+							</div>
+							<div class="list-bottom-content-sale">
+								<em>已售10744袋</em>
+								<em>3020人互动</em>
+							</div>
+							<div class="list-bottom-content-send">东部大仓发货</div>
+							<div class="list-bottom-content-cart">
+								加入购物车
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<!-- footer -->
+		<div class="allfooter">
+			
+		</div>
+
+	</div>
+
+	<script type="text/javascript" src="js/lib/jquery-1.11.3.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.allheader')
+			.load("http://localhost:8080/header-footer.html .allheader");
+
+			$('.righthint')
+			.load("http://localhost:8080/header-footer.html .righthint");
+
+			$('.alllogo')
+			.load("http://localhost:8080/header-footer.html .alllogo");
+
+			$('.allfooter')
+			.load("http://localhost:8080/header-footer.html .allfooter");
+		})
+	</script>
+	
+	<script data-main="js/js/goods-list.js" type="text/javascript" src="js/require.js" defer async="true"></script>
+
+</body>
+</html>

@@ -1,12 +1,13 @@
 {
-	"goods-id": 10001,
-	"goods-name": "贝莎Berasar犬用澳洲脱脂羊奶酪55g",
-	"goods-price": 11.00,
+	"goods_id": 10001,
+	"goods_name": "贝莎Berasar犬用澳洲脱脂羊奶酪55g",
+	"goods_price": 145.00,
+	"goods_pic": "imgs/detail-bg3.jpg",
 	"option": {
 		"1000101": {
 			"id" : "1000101",
 			"type": "消臭配方",
-			"sale_price": "13.00",
+			"sale_price": "16.00",
 			"stock": 10
 		},
 		"1000102": {

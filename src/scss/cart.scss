@@ -659,8 +659,9 @@
 		    		color: #e61212;
 	    		    font-size: 18px;
 		    	}
-		    	span {
-		    		background: #459d36;
+		    	
+		    	.buy {
+		    		background: #b1b1b1;
 		    		color: #fff;
 		    		width: 213px;
 				    display: inline-block;
@@ -670,6 +671,9 @@
 			        font-weight: 600;
 		            font-size: 18px;
 		            cursor: pointer;
+		    	}
+		    	.go-buy {
+		    		background: #459d36;
 		    	}
 		    }
 		}

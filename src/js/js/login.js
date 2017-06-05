@@ -64,30 +64,35 @@ require(['../config'],function(){
 
 			//使用ajax进行登录
 			$.ajax({
-				type: 'post',
-				url: 'http://10.9.151.199/PC-Project-Admin/login.php',
+				//type: 'post',
+				url: 'http://datainfo.duapp.com/shopdata/userinfo.php',
 				data: {
-					account: account,
+					status: 'login',
+					userID: account,
 					password: pwd
 				},
-				dataType: 'jsonp',
+				//dataType: 'jsonp',
 				success: function(result){
-					if(result.status) {
+					switch(result) {
+						case '0':
+						alert('用户名不存在');
+						break;
+						case '2':
+						alert('用户名密码不符');
+						break;
+						default:
 						alert('登录成功');
-
 						//判断是否需要自动登录
 						//if( $('#remember').prop('checked') ){
-							var userinfo = {
-								account: account,
-								login_status: 1
-							};
-							$.cookie('userinfo',JSON.stringify(userinfo),{expires: 365,path: '/'});
+						var userinfo = {
+							account: account,
+							login_status: 1
+						};
+						$.cookie('userinfo',JSON.stringify(userinfo),{expires: 10,path: '/'});
 						//}
-
 						//大部分会跳转到首页
 						location.href = 'index.html';
-					}else{
-						alert('登录失败');
+						break;
 					}
 				}
 			});

@@ -6,7 +6,7 @@
 require(['../config'],function(){
 
 	//加载需要用到的模块
-	require(['jquery'],function($){
-		
+	require(['jquery','cart-operation'],function($,cartO){
+		cartO.init();
 	})
 });

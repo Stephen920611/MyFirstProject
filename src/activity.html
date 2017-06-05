@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>活动页</title>
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/header-footer.css">
+	<link rel="stylesheet" type="text/css" href="css/activity.css">
+</head>
+<body>
+	<div id="all">
+		<!-- 头部 -->
+		<div class="allheader">
+		</div>
+		
+
+		<!-- 最右边的提示 -->
+		<div class="righthint">
+			
+		</div>
+
+		<!-- logo -->
+		<div class="alllogo">
+			
+		</div>
+		<!-- activity -->
+		<div class="allactivity">
+			<div class="activity">
+				<div class="activity-top">
+					<img src="//static.epetbar.com/static_www/hotpacks/images/title.jpg">
+					<p>精选礼包</p>
+				</div>
+				<div class="activity-bottom">
+					
+				</div>
+			</div
+		</div>
+		<!-- footer -->
+		<div class="allfooter">
+			
+		</div>
+
+	</div>
+
+	<script type="text/javascript" src="js/lib/jquery-1.11.3.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.allheader')
+			.load("http://localhost:8080/header-footer.html .allheader");
+
+			$('.righthint')
+			.load("http://localhost:8080/header-footer.html .righthint");
+
+			$('.alllogo')
+			.load("http://localhost:8080/header-footer.html .alllogo");
+
+			$('.allfooter')
+			.load("http://localhost:8080/header-footer.html .allfooter");
+		})
+	</script>
+	
+	<script data-main="js/js/activity.js" type="text/javascript" src="js/require.js" defer async="true"></script>
+
+</body>
+</html>

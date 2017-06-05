@@ -19,7 +19,6 @@ require(['../config'],function(){
 		bg();
 		/*封装随机生成背景颜色和四位数字验证码*/
 		function bg(){
-			console.log(1);
 			var bgcolor = '0123456789abcdef';
 			var c = '#';
 			var f = '';
@@ -82,10 +81,10 @@ require(['../config'],function(){
 				regStatus.phone = false;
 				return;
 			}
-			var _this = this;
+			/*var _this = this;
 			//判断手机号是否已被注册
 			$.ajax({
-				url: 'http://10.9.151.199/PC-Project-Admin/checkAccount.php',
+				url: 'http://datainfo.duapp.com/shopdata/userinfo.php',
 				data: {
 					account: phone
 				},
@@ -100,7 +99,7 @@ require(['../config'],function(){
 						regStatus.phone = false;
 					}
 				}
-			});
+			});*/
 		});
 		contentphone.click(function(){
 			$(this).siblings('.con-title').hide();
@@ -168,24 +167,47 @@ require(['../config'],function(){
 			var _this = this;
 			//判断用户名是否已被注册
 			$.ajax({
-				url: 'http://10.9.151.199/PC-Project-Admin/checkAccount.php',
+				url: 'http://datainfo.duapp.com/shopdata/userinfo.php',
 				data: {
-					account: user
+					status: 'login',
+					userID: user
 				},
-				dataType: 'jsonp',
+				//dataType: 'jsonp',
 				success: function(result){
-					if(result.status){
+					//console.log(result);
+					switch(result){
+						case '0':
 						//用户名可用
 						$(_this).siblings('.con-title').hide();
+						$(_this).siblings('.con-ok').show();
+						$(_this).siblings('.con-exist').hide();
+						break;
+						default:
+						//用户名已经存在
+						$(_this).siblings('.con-title').hide();
 						$(_this).siblings('.con-ok').hide();
-						$(_this).siblings('..con-exist').show();
+						$(_this).siblings('.con-exist').show();
+						
 						$(_this).css('border-color','#ff6f4a');
-					}else{
-						//用户名已存在
-						$(_this).siblings('.con-title').show();
-						$(_this).siblings('.con-ok').hide();
 						regStatus.uname = false;
+						break;
 					}
+					/*if(result == 1){
+						//用户名可用
+						
+						$(_this).siblings('.con-title').hide();
+						$(_this).siblings('.con-ok').show();
+						$(_this).siblings('.con-exist').hide();
+						//regStatus.uname = false;
+					}else{
+						
+						//用户名已存在
+						$(_this).siblings('.con-title').hide();
+						$(_this).siblings('.con-ok').hide();
+						$(_this).siblings('.con-exist').show();
+						
+						$(_this).css('border-color','#ff6f4a');
+					}*/
 				}
 			});
 		});
@@ -278,17 +300,26 @@ require(['../config'],function(){
 			//通过ajax提交表单数据
 			$.ajax({
 				type: 'post',
-				url: 'http://10.9.151.199/PC-Project-Admin/register.php',
+				url: 'http://datainfo.duapp.com/shopdata/userinfo.php',
 				data: {
-					account: contentuser.val(),
+					status: 'register',
+					userID: contentuser.val(),
 					password: contentpwd.val()
 				},
-				dataType: 'jsonp',
+				//dataType: 'jsonp',
 				success: function(result){
-					if(result.status){
+					console.log(result);
+					switch(result){
+						case '0':
+						alert('用户名重名');
+						break;
+						case '1':
 						alert('注册成功');
-					}else{
-						alert('注册失败');
+						location.href = 'login.html';
+						break;
+						case '2':
+						alert('网络问题');
+						break;
 					}
 				}
 			});
